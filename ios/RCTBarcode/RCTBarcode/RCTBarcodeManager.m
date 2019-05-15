@@ -31,6 +31,11 @@ RCT_CUSTOM_VIEW_PROPERTY(barCodeTypes, NSArray, RCTBarcode) {
     self.barCodeTypes = [RCTConvert NSArray:json];
 }
 
++ (BOOL)requiresMainQueueSetup
+{
+    return NO;
+}
+
 - (UIView *)view
 {
     self.session = [[AVCaptureSession alloc]init];
